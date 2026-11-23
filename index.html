@@ -1,0 +1,613 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MukaDepan — See Your Live Website Before You Pay RM1</title>
+  <meta name="description" content="Custom-coded, sub-second landing pages for Malaysian SMEs. Preview your live front page free in 24 hours; launch on your own domain in 72 hours from RM990.">
+  <meta name="theme-color" content="#1B663E">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%231B663E'/%3E%3Cpath d='M6 21c2.5 0 5-7 7.5-8.5 1.5-.9 2.3.1 1.7 2.2l-.7 2.8c-.3 1.2.6 1.7 1.9.5 2-1.8 4.4-4.7 6.5-5.5 1.5-.6 2.2.3 1.7 2.2l-.6 2.6c-.3 1.2.6 1.7 2 .5' fill='none' stroke='%23ffffff' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+  <meta property="og:title" content="MukaDepan — See Your Live Website Before You Pay RM1">
+  <meta property="og:description" content="Custom-coded, 90+ Mobile Speed landing pages for Malaysian SMEs. Live preview in 24h, launch in 72h, 100% yours to keep.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="/assets/brand/og-mukadepan.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preload" href="assets/fonts/dm-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/newsreader-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<a class="skip" href="#main" data-i18n="skip">Skip to content</a>
+
+<header class="site-head" id="siteHead">
+  <div class="wrap head-inner">
+    <a class="brand" href="#top" aria-label="MukaDepan, back to top">
+      <svg class="brand-wordmark" viewBox="0 0 980 220" width="152" height="34" role="img" aria-label="MukaDepan">
+        <path d="M42 146 C62 146, 86 112, 108 100 C122 92, 130 98, 126 116 L120 142 C118 152, 126 156, 138 146 C156 130, 178 106, 196 100 C210 95, 216 102, 212 118 L206 142 C204 152, 212 156, 226 146 C238 138, 250 130, 262 126" stroke="#1B663E" stroke-width="33" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+        <text x="278" y="156" fill="#1B663E" class="brand-text">ukadepan</text>
+      </svg>
+    </a>
+
+    <nav class="nav" aria-label="Main">
+      <a href="#build" data-i18n="nav_pricing">Pricing</a>
+      <a href="#compare" data-i18n="nav_compare">Compare</a>
+      <a href="#work" data-i18n="nav_work">Work</a>
+      <a href="#faq" data-i18n="nav_faq">FAQ</a>
+    </nav>
+
+    <div class="head-controls">
+      <div class="lang-switch" role="group" aria-label="Language switcher">
+        <button type="button" class="lang-btn is-active" data-lang="en" aria-pressed="true">EN</button>
+        <button type="button" class="lang-btn" data-lang="ms" aria-pressed="false">BM</button>
+      </div>
+      <a class="btn btn-small head-cta" href="#build" data-i18n="nav_cta">Free Preview</a>
+      <button class="menu-toggle" id="menuToggle" type="button" aria-expanded="false" aria-controls="menuPanel" data-i18n="menu_label">Menu</button>
+    </div>
+
+    <div class="menu-panel" id="menuPanel" hidden>
+      <a href="#build" data-i18n="nav_pricing">Pricing</a>
+      <a href="#compare" data-i18n="nav_compare">Compare</a>
+      <a href="#work" data-i18n="nav_work">Work</a>
+      <a href="#faq" data-i18n="nav_faq">FAQ</a>
+      <a href="#build" class="menu-cta" data-i18n="nav_cta">Free Preview</a>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="hero" id="top">
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <p class="eyebrow" data-i18n="hero_eyebrow">MukaDepan Studio · Malaysia</p>
+        <h1 class="hero-title" data-i18n="hero_title">See your live website<br><em>before you pay RM1.</em></h1>
+        <p class="hero-lead" data-i18n="hero_lead">Custom-coded, sub-second mobile speed, zero WordPress bloat. We build your live concept first — if you love it, it launches on your own domain in <strong>72 hours</strong>, not 6 weeks.</p>
+        <div class="hero-actions">
+          <a class="btn" href="#build" data-i18n="hero_cta_primary">Get My Free Preview <span aria-hidden="true">→</span></a>
+          <a class="text-link" href="#work" data-i18n="hero_cta_secondary">See live builds <span aria-hidden="true">↓</span></a>
+        </div>
+        <p class="hero-footnote" data-i18n="hero_trust">RM0 upfront preview <span aria-hidden="true">·</span> 72h launch <span aria-hidden="true">·</span> 100% code ownership</p>
+      </div>
+
+      <aside class="proof-card" aria-label="Speed and capacity proof">
+        <div class="proof-head">
+          <span class="proof-badge">
+            <span class="pulse-dot" aria-hidden="true"></span>
+            <span data-i18n="proof_slots">2 of 5 weekly build slots open</span>
+          </span>
+          <span class="proof-date"><span data-i18n="proof_launch_label">Next Pro launch:</span> <strong id="heroDate">in 3 days</strong></span>
+        </div>
+
+        <div class="speed-compare">
+          <div class="speed-row is-fast">
+            <div class="speed-meta">
+              <span data-i18n="proof_fast_label">MukaDepan Edge Build</span>
+              <strong>98 / 100</strong>
+            </div>
+            <div class="speed-track"><span class="speed-fill" style="width:98%"></span></div>
+            <p class="speed-sub" data-i18n="proof_fast_sub">0.7s First Paint · Pure static edge code</p>
+          </div>
+          <div class="speed-row is-slow">
+            <div class="speed-meta">
+              <span data-i18n="proof_slow_label">Typical WordPress Template</span>
+              <strong>41 / 100</strong>
+            </div>
+            <div class="speed-track"><span class="speed-fill" style="width:41%"></span></div>
+            <p class="speed-sub" data-i18n="proof_slow_sub">4.8s Mobile Load · 53% visitors bounce</p>
+          </div>
+        </div>
+
+        <figure class="proof-visual">
+          <img src="assets/img/pour.jpg" width="1600" height="1000" alt="Crafted editorial studio workspace" fetchpriority="high">
+          <figcaption>
+            <span data-i18n="proof_cap_left">Pay RM0 until preview approved</span>
+            <span data-i18n="proof_cap_right">FPX · DuitNow · Card</span>
+          </figcaption>
+        </figure>
+      </aside>
+    </div>
+  </section>
+
+  <section class="process" aria-labelledby="processTitle">
+    <div class="wrap">
+      <div class="process-head">
+        <p class="eyebrow" data-i18n="proc_eyebrow">Zero-risk process</p>
+        <h2 id="processTitle" data-i18n="proc_title">Preview first. Approve second. Launch in 72 hours.</h2>
+      </div>
+      <ol class="process-grid">
+        <li class="process-step">
+          <span class="step-num">01</span>
+          <h3 data-i18n="proc_s1_title">Share business details (30 sec)</h3>
+          <p data-i18n="proc_s1_body">Drop your business name, WhatsApp number, and any Facebook, Instagram, or Google Maps link below. No lengthy discovery calls required.</p>
+        </li>
+        <li class="process-step">
+          <span class="step-num">02</span>
+          <h3 data-i18n="proc_s2_title">Review your live preview (24h)</h3>
+          <p data-i18n="proc_s2_body">We send a real, interactive preview link straight to your phone. Test it yourself — walk away paying RM0 if it is not for you.</p>
+        </li>
+        <li class="process-step">
+          <span class="step-num">03</span>
+          <h3 data-i18n="proc_s3_title">Approve &amp; launch on your domain (72h)</h3>
+          <p data-i18n="proc_s3_body">Happy with the preview? Pay 50% via FPX, DuitNow QR, or Card to lock your build, and the remaining 50% only when your domain is live.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="builder" id="build" aria-labelledby="builderTitle">
+    <div class="wrap">
+      <div class="builder-head">
+        <div>
+          <p class="eyebrow" data-i18n="desk_eyebrow">One-screen order desk</p>
+          <h2 id="builderTitle" data-i18n="desk_title">Transparent pricing. Zero quote surprises.</h2>
+        </div>
+        <p data-i18n="desk_sub">Pick your package and extras. Your exact total, launch date, and savings update live — then claim your free RM0 preview directly on WhatsApp.</p>
+      </div>
+
+      <div class="builder-layout">
+        <div class="choices" id="builderForm">
+
+          <fieldset class="choice-block">
+            <legend class="sr-only">Package</legend>
+            <div class="block-head" aria-hidden="true">
+              <span class="block-title"><span class="block-num">01</span><span data-i18n="step1_label">Choose your package</span></span>
+              <span class="block-note" data-i18n="step1_note">Code &amp; mobile QA included</span>
+            </div>
+            <div class="tier-grid">
+              <label class="tier-option">
+                <input type="radio" name="tier" value="lite">
+                <span class="tier-face">
+                  <span class="tier-top">
+                    <span class="tier-name" data-i18n="tier_lite_name">MukaDepan Lite</span>
+                    <span class="tier-tag" data-i18n="tier_lite_tag">Starter</span>
+                  </span>
+                  <span class="tier-price-row">
+                    <strong class="tier-price">RM 990</strong>
+                    <span class="tier-turn" data-i18n="tier_lite_turn">5-day launch</span>
+                  </span>
+                  <span class="tier-desc" data-i18n="tier_lite_desc">1-page launchpad (4 sections), WhatsApp CTA, Google Maps, SSL + 1st yr edge hosting, 1 revision.</span>
+                </span>
+              </label>
+
+              <label class="tier-option tier-featured">
+                <input type="radio" name="tier" value="pro" checked>
+                <span class="tier-face">
+                  <span class="tier-top">
+                    <span class="tier-name" data-i18n="tier_pro_name">MukaDepan Pro</span>
+                    <span class="tier-badge" data-i18n="tier_pro_badge">Most Popular</span>
+                  </span>
+                  <span class="tier-price-row">
+                    <strong class="tier-price">RM 1,490</strong>
+                    <span class="tier-anchor" data-i18n="tier_pro_anchor">Agency quote: <s>RM 3,800</s></span>
+                  </span>
+                  <span class="tier-desc" data-i18n="tier_pro_desc">Full BM or EN conversion copy, FREE .com/.my domain (1st yr), 72h express launch, Google Reviews + prefilled WhatsApp flow, 90+ Speed Guarantee, Local SEO tune-up, 30 days free edits, 3 revisions, 100% code ownership.</span>
+                </span>
+              </label>
+
+              <label class="tier-option">
+                <input type="radio" name="tier" value="scale">
+                <span class="tier-face">
+                  <span class="tier-top">
+                    <span class="tier-name" data-i18n="tier_scale_name">MukaDepan Scale</span>
+                    <span class="tier-tag" data-i18n="tier_scale_tag">Multi-Page</span>
+                  </span>
+                  <span class="tier-price-row">
+                    <strong class="tier-price">RM 3,200</strong>
+                    <span class="tier-turn" data-i18n="tier_scale_turn">7-day launch</span>
+                  </span>
+                  <span class="tier-desc" data-i18n="tier_scale_desc">Up to 5 pages or full Bilingual BM+EN, booking/quote calculator or FPX link, Meta Pixel + GA4 tracking, custom UI sections, 90 days priority tweaks.</span>
+                </span>
+              </label>
+            </div>
+          </fieldset>
+
+          <fieldset class="choice-block">
+            <legend class="sr-only">Founding perk and boosters</legend>
+            <div class="block-head" aria-hidden="true">
+              <span class="block-title"><span class="block-num">02</span><span data-i18n="step2_label">Founding perk &amp; boosters</span></span>
+              <span class="block-note" data-i18n="step2_note">Toggle what fits</span>
+            </div>
+
+            <label class="deal-row">
+              <input type="checkbox" name="first" value="yes" checked>
+              <span class="checkmark" aria-hidden="true"></span>
+              <span class="deal-copy">
+                <span class="deal-name" data-i18n="perk_name">Founding First-Site Bonus</span>
+                <span class="deal-meta" data-i18n="perk_meta">One per business — brings Pro down to RM 1,290</span>
+              </span>
+              <span class="deal-price">− RM 200</span>
+            </label>
+
+            <label class="care-row">
+              <input type="checkbox" name="care" value="yes">
+              <span class="checkmark" aria-hidden="true"></span>
+              <span class="extra-copy">
+                <span class="extra-name" data-i18n="care_name">MukaDepan Care Plan</span>
+                <span class="extra-meta" data-i18n="care_meta">Unlimited minor text/photo/promo swaps (48h), domain + SSL renewal, uptime alerts · RM3.30/day · Cancel anytime</span>
+              </span>
+              <span class="extra-price" data-i18n="care_price">+RM 99/mo</span>
+            </label>
+
+            <div class="extra-list">
+              <label class="extra-row" id="bilingualRow">
+                <input type="checkbox" name="extra" value="bilingual">
+                <span class="checkmark" aria-hidden="true"></span>
+                <span class="extra-copy">
+                  <span class="extra-name" data-i18n="ext_bilingual_name">Full Bilingual Toggle (BM + EN)</span>
+                  <span class="extra-meta" id="bilingualMeta" data-i18n="ext_bilingual_meta">Instant switcher for both audiences · +1 day</span>
+                </span>
+                <span class="extra-price" id="bilingualPrice">+RM 350</span>
+              </label>
+
+              <label class="extra-row">
+                <input type="checkbox" name="extra" value="booking">
+                <span class="checkmark" aria-hidden="true"></span>
+                <span class="extra-copy">
+                  <span class="extra-name" data-i18n="ext_booking_name">Smart Booking / Quote Estimator</span>
+                  <span class="extra-meta" data-i18n="ext_booking_meta">Interactive slot or price pre-qualifier routed to WhatsApp</span>
+                </span>
+                <span class="extra-price">+RM 250</span>
+              </label>
+
+              <label class="extra-row">
+                <input type="checkbox" name="extra" value="fpx">
+                <span class="checkmark" aria-hidden="true"></span>
+                <span class="extra-copy">
+                  <span class="extra-name" data-i18n="ext_fpx_name">FPX / ToyyibPay Checkout Link</span>
+                  <span class="extra-meta" data-i18n="ext_fpx_meta">Accept deposits &amp; online banking directly · +1 day</span>
+                </span>
+                <span class="extra-price">+RM 300</span>
+              </label>
+            </div>
+          </fieldset>
+
+          <fieldset class="choice-block">
+            <legend class="sr-only">Payment style</legend>
+            <div class="block-head" aria-hidden="true">
+              <span class="block-title"><span class="block-num">03</span><span data-i18n="step3_label">Payment style</span></span>
+              <span class="block-note" data-i18n="step3_note">RM0 charged today</span>
+            </div>
+            <div class="pay-grid">
+              <label class="pay-option">
+                <input type="radio" name="pay" value="split" checked>
+                <span class="pay-face">
+                  <span class="pay-name" data-i18n="pay_split_name">One-Off (50/50 Split)</span>
+                  <span class="pay-amount" id="paySplitAmt">RM 1,290</span>
+                  <span class="pay-meta" id="paySplitMeta">RM0 preview · RM 645 approval · RM 645 live</span>
+                </span>
+              </label>
+
+              <label class="pay-option">
+                <input type="radio" name="pay" value="waas">
+                <span class="pay-face">
+                  <span class="pay-name" id="payWaasTitle" data-i18n="pay_waas_name">Zero-Upfront Plan</span>
+                  <span class="pay-amount" id="payWaasAmt">RM 0 setup · RM 199/mo</span>
+                  <span class="pay-meta" id="payWaasMeta">12 months · Hosting, domain &amp; Care included</span>
+                </span>
+              </label>
+            </div>
+          </fieldset>
+
+        </div>
+
+        <aside class="summary" id="order" aria-labelledby="summaryTitle">
+          <div class="summary-top">
+            <p class="eyebrow" data-i18n="sum_eyebrow">Your preview order</p>
+            <p class="summary-open" id="summaryBadge" data-i18n="sum_badge">RM 0 today</p>
+          </div>
+
+          <h3 class="summary-title" id="summaryTitle">
+            <span id="summaryTierName">MukaDepan Pro</span>, <span data-i18n="sum_launch_prefix">live by</span> <span id="summaryDate">Thu 26 Nov</span>.
+          </h3>
+
+          <ul class="summary-list" id="orderList"></ul>
+
+          <div class="summary-total" aria-live="polite">
+            <span id="orderLabel">Total</span>
+            <span class="summary-figure"><strong id="orderTotal">RM 1,290</strong><span class="summary-unit" id="orderUnit" hidden>/mo</span></span>
+          </div>
+          <p class="summary-savings" id="orderSavings"></p>
+          <p class="summary-plan" id="orderPlan" hidden></p>
+
+          <div class="claim-drawer">
+            <p class="claim-head" data-i18n="claim_head">Lock your free 24h preview (optional details)</p>
+            <div class="claim-fields">
+              <input type="text" id="leadBiz" autocomplete="organization" placeholder="Business name (e.g. Klinik Pergigian Aman)" data-i18n-placeholder="ph_biz">
+              <input type="tel" id="leadWa" autocomplete="tel" placeholder="Your WhatsApp number (e.g. 012-345 6789)" data-i18n-placeholder="ph_wa">
+              <input type="text" id="leadLink" autocomplete="url" placeholder="Current website, FB, or IG link (if any)" data-i18n-placeholder="ph_link">
+            </div>
+          </div>
+
+          <a class="btn btn-wide" id="orderBtn" href="https://wa.me/601154402412" target="_blank" rel="noopener">
+            <span data-i18n="sum_cta">Claim Free Preview on WhatsApp</span> <span aria-hidden="true">→</span>
+          </a>
+
+          <a class="email-fallback" id="emailBtn" href="mailto:meerulhazeeq@gmail.com">
+            <span data-i18n="sum_email">Or email order to meerulhazeeq@gmail.com</span>
+          </a>
+
+          <p class="summary-roi" data-i18n="sum_roi">1–2 extra customers pays back your entire website — then it sells for you 24/7.</p>
+          <p class="summary-terms" id="termsLine">RM0 preview · 50% on approval · 50% when live</p>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <section class="guarantees" aria-labelledby="guaranteesTitle">
+    <div class="wrap">
+      <div class="guarantees-head">
+        <p class="eyebrow eyebrow-light" data-i18n="guar_eyebrow">Built-in protection</p>
+        <h2 id="guaranteesTitle" data-i18n="guar_title">Four promises agencies refuse to put in writing.</h2>
+      </div>
+      <div class="guarantees-grid">
+        <article class="guar-card">
+          <svg class="guar-icon" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M12 3l7 3v6c0 5-3.5 8-7 9-3.5-1-7-4-7-9V6l7-3z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M9 12l2 2 4-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <h3 data-i18n="g1_title">RM0 Risk Preview First</h3>
+          <p data-i18n="g1_body">You see a working live version tailored to your business before spending a single sen. Not impressed? Walk away cleanly.</p>
+        </article>
+        <article class="guar-card">
+          <svg class="guar-icon" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M13 2L4 14h7l-1 8 9-12h-7l1-8z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+          <h3 data-i18n="g2_title">90+ Mobile Speed or Free</h3>
+          <p data-i18n="g2_body">We ship lean static code on edge networks — never bloated WordPress plugins. Hits 90+ Mobile PageSpeed or we tune it free.</p>
+        </article>
+        <article class="guar-card">
+          <svg class="guar-icon" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><rect x="4" y="11" width="16" height="10" rx="2" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M8 11V7a4 4 0 0 1 8 0v4" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>
+          <h3 data-i18n="g3_title">No-Hostage Ownership</h3>
+          <p data-i18n="g3_body">Your domain sits in your name and you get 100% of the source code. Care Plan is cancel-anytime — we earn renewals, never trap you.</p>
+        </article>
+        <article class="guar-card">
+          <svg class="guar-icon" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M3 10h18" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>
+          <h3 data-i18n="g4_title">50/50 Milestone Split</h3>
+          <p data-i18n="g4_body">RM0 to see preview, 50% when you approve the build, and the final 50% only after your live domain is up. Pay via FPX, DuitNow QR, or Card.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="compare" id="compare" aria-labelledby="compareTitle">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow" data-i18n="cmp_eyebrow">Side-by-side truth</p>
+          <h2 id="compareTitle" data-i18n="cmp_title">Why Malaysian SMEs switch from templates and agencies.</h2>
+        </div>
+        <p class="section-note" data-i18n="cmp_sub">Real 2025–2026 Malaysian market benchmarks compared honestly.</p>
+      </div>
+
+      <div class="table-wrap" role="region" aria-label="Competitor comparison table" tabindex="0">
+        <table class="cmp-table">
+          <thead>
+            <tr>
+              <th scope="col" data-i18n="cmp_col_feat">What Matters</th>
+              <th scope="col" class="col-muka">
+                <span>MukaDepan Pro</span>
+                <small data-i18n="cmp_muka_price">RM 1,290 first-site · RM 1,490</small>
+              </th>
+              <th scope="col">
+                <span data-i18n="cmp_host_head">Hosting Bundles</span>
+                <small data-i18n="cmp_host_sub">Shinjiru / Exabytes (RM480–RM900+)</small>
+              </th>
+              <th scope="col">
+                <span data-i18n="cmp_free_head">Freelancers</span>
+                <small>RM 880 – RM 2,000</small>
+              </th>
+              <th scope="col">
+                <span data-i18n="cmp_agen_head">KL Agencies</span>
+                <small>RM 3,500 – RM 10,000+</small>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row" data-i18n="cmp_r1_f">See live preview first?</th>
+              <td class="col-muka"><strong data-i18n="cmp_r1_m">Yes — RM0 upfront</strong></td>
+              <td data-i18n="cmp_r1_h">No (pay upfront)</td>
+              <td data-i18n="cmp_r1_fr">No (50% deposit first)</td>
+              <td data-i18n="cmp_r1_a">No (50% deposit first)</td>
+            </tr>
+            <tr>
+              <th scope="row" data-i18n="cmp_r2_f">Launch turnaround</th>
+              <td class="col-muka"><strong data-i18n="cmp_r2_m">72 Hours</strong></td>
+              <td data-i18n="cmp_r2_h">1–3 weeks</td>
+              <td data-i18n="cmp_r2_fr">1–4 weeks (ghost risk)</td>
+              <td data-i18n="cmp_r2_a">4–8 weeks</td>
+            </tr>
+            <tr>
+              <th scope="row" data-i18n="cmp_r3_f">Architecture &amp; mobile speed</th>
+              <td class="col-muka"><strong data-i18n="cmp_r3_m">Custom edge code (90+ guaranteed)</strong></td>
+              <td data-i18n="cmp_r3_h">Heavy WordPress template</td>
+              <td data-i18n="cmp_r3_fr">WordPress / Elementor</td>
+              <td data-i18n="cmp_r3_a">Custom or WordPress</td>
+            </tr>
+            <tr>
+              <th scope="row" data-i18n="cmp_r4_f">Year-2/3 renewal trap?</th>
+              <td class="col-muka"><strong data-i18n="cmp_r4_m">None (RM0 self-host or RM99/mo Care)</strong></td>
+              <td data-i18n="cmp_r4_h">Yes (RM460–RM900+/yr)</td>
+              <td data-i18n="cmp_r4_fr">You handle server &amp; hacks</td>
+              <td data-i18n="cmp_r4_a">RM200–RM450/mo retainer</td>
+            </tr>
+            <tr>
+              <th scope="row" data-i18n="cmp_r5_f">BM / EN sales copywriting</th>
+              <td class="col-muka"><strong data-i18n="cmp_r5_m">Included in Pro</strong></td>
+              <td data-i18n="cmp_r5_h">DIY / minimal</td>
+              <td data-i18n="cmp_r5_fr">Extra charge</td>
+              <td data-i18n="cmp_r5_a">Included (high fee)</td>
+            </tr>
+            <tr>
+              <th scope="row" data-i18n="cmp_r6_f">Full code &amp; domain ownership</th>
+              <td class="col-muka"><strong data-i18n="cmp_r6_m">100% yours</strong></td>
+              <td data-i18n="cmp_r6_h">Tied to their hosting</td>
+              <td data-i18n="cmp_r6_fr">Often messy handoff</td>
+              <td data-i18n="cmp_r6_a">Yes</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="work" id="work" aria-labelledby="workTitle">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow" data-i18n="work_eyebrow">Selected live builds</p>
+          <h2 id="workTitle" data-i18n="work_title">Real deployed work — tap and inspect on your phone.</h2>
+        </div>
+        <div class="section-intro">
+          <p data-i18n="work_sub">Every build runs on lean edge infrastructure with instant load speed. Your MukaDepan preview is tailored from scratch to your brand, services, and WhatsApp flow.</p>
+          <a class="text-link" href="#build" data-i18n="work_cta">Claim your free preview <span aria-hidden="true">→</span></a>
+        </div>
+      </div>
+
+      <div class="work-grid">
+        <article class="work-item work-wide">
+          <a class="work-link" href="https://jadualku-six.vercel.app" target="_blank" rel="noopener">
+            <div class="work-shot"><img src="assets/img/site-jadualku.jpg" width="1200" height="750" alt="JadualKu student timetable generator interface" loading="lazy"></div>
+            <div class="work-meta">
+              <div><h3>JadualKu</h3><p data-i18n="w1_desc">Student timetable planner · Edge web app</p></div>
+              <span class="work-arrow" aria-hidden="true">↗</span>
+            </div>
+          </a>
+        </article>
+
+        <article class="work-item work-narrow">
+          <a class="work-link" href="https://catbreeds-eta.vercel.app" target="_blank" rel="noopener">
+            <div class="work-shot"><img src="assets/img/site-catbreeds.jpg" width="1200" height="750" alt="CatBreeds feline encyclopedia and breed guide interface" loading="lazy"></div>
+            <div class="work-meta">
+              <div><h3>CatBreeds</h3><p data-i18n="w2_desc">Feline encyclopedia · Fast static build</p></div>
+              <span class="work-arrow" aria-hidden="true">↗</span>
+            </div>
+          </a>
+        </article>
+
+        <article class="work-item work-narrow">
+          <a class="work-link" href="https://rose-ctf.vercel.app" target="_blank" rel="noopener">
+            <div class="work-shot"><img src="assets/img/site-rosectf.jpg" width="1200" height="750" alt="Rose CTF cyber challenge platform interface" loading="lazy"></div>
+            <div class="work-meta">
+              <div><h3>Rose CTF</h3><p data-i18n="w3_desc">Cyber challenge platform · Custom dark UI</p></div>
+              <span class="work-arrow" aria-hidden="true">↗</span>
+            </div>
+          </a>
+        </article>
+
+        <article class="work-item work-wide">
+          <a class="work-link" href="https://kopisaigon.vercel.app" target="_blank" rel="noopener">
+            <div class="work-shot"><img src="assets/img/site-kopisaigon.jpg" width="1200" height="750" alt="PRIME commercial real estate advisory interface" loading="lazy"></div>
+            <div class="work-meta">
+              <div><h3>PRIME</h3><p data-i18n="w4_desc">Commercial property advisory · Lead capture</p></div>
+              <span class="work-arrow" aria-hidden="true">↗</span>
+            </div>
+          </a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="questions" id="faq" aria-labelledby="questionsTitle">
+    <div class="wrap questions-grid">
+      <div class="questions-intro">
+        <p class="eyebrow" data-i18n="faq_eyebrow">Honest answers</p>
+        <h2 id="questionsTitle" data-i18n="faq_title">Everything you want to ask before clicking WhatsApp.</h2>
+        <p data-i18n="faq_contact">Prefer email? Write to <a href="mailto:meerulhazeeq@gmail.com">meerulhazeeq@gmail.com</a> or WhatsApp <a href="https://wa.me/601154402412" target="_blank" rel="noopener">011-5440 2412</a>.</p>
+      </div>
+
+      <div class="qa-list">
+        <article class="qa">
+          <h3 data-i18n="q1_t">Is the preview genuinely free with zero deposit?</h3>
+          <p data-i18n="q1_b">Yes. You share your business name and link, and we send back a working live concept URL within 24 hours. If you do not want to proceed, you owe RM0 and there is zero follow-up pressure.</p>
+        </article>
+        <article class="qa">
+          <h3 data-i18n="q2_t">How can MukaDepan Pro launch in 72 hours?</h3>
+          <p data-i18n="q2_b">We do not waste weeks wrestling with heavy WordPress themes or bloated page builders. We build on clean, pre-engineered edge architecture and tailor copy, visuals, and WhatsApp flows directly to your niche.</p>
+        </article>
+        <article class="qa">
+          <h3 data-i18n="q3_t">Do I have to pay RM99/mo Care forever?</h3>
+          <p data-i18n="q3_b">No. Care Plan is 100% optional and cancel-anytime. Without Care, you still own your domain and full source code — you can host it free on Vercel/Cloudflare Pages or ask for ad-hoc edits anytime.</p>
+        </article>
+        <article class="qa">
+          <h3 data-i18n="q4_t">How do payments work?</h3>
+          <p data-i18n="q4_b">One-off builds use a 50/50 split: RM0 for preview, 50% upon approving the build, and 50% only after your live domain is online. We accept FPX online banking, DuitNow QR, and Visa/Mastercard. Tight on cash flow? Switch to the Zero-Upfront RM199/mo plan on Lite or Pro.</p>
+        </article>
+        <article class="qa">
+          <h3 data-i18n="q5_t">Can my website be in Bahasa Melayu, English, or both?</h3>
+          <p data-i18n="q5_b">Pro includes conversion copywriting in either Bahasa Melayu or English. Need an instant EN/BM switcher like this page? Tick the Bilingual add-on or pick Scale (where it is already included).</p>
+        </article>
+        <article class="qa">
+          <h3 data-i18n="q6_t">What do I need to prepare to get started?</h3>
+          <p data-i18n="q6_b">Just your business name, WhatsApp number, services/pricing list, and any existing FB/IG/Google Maps link. If you do not have professional photos yet, we source clean licensed visuals for your niche.</p>
+        </article>
+        <article class="qa">
+          <h3 data-i18n="q7_t">Will my business show up better on Google?</h3>
+          <p data-i18n="q7_b">Every Pro and Scale site ships with clean semantic headings, local schema/meta tags, sub-second mobile speed, Google Maps integration, and Google Business Profile link optimization — the exact technical foundation Google rewards.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="closing" aria-labelledby="closingTitle">
+    <div class="wrap closing-grid">
+      <div>
+        <p class="eyebrow" data-i18n="close_eyebrow">2 of 5 weekly slots open</p>
+        <h2 id="closingTitle" data-i18n="close_title">See your new front page tomorrow. Launch this week.</h2>
+      </div>
+      <div class="closing-action">
+        <p data-i18n="close_body">Stop sending paying customers to slow templates or a messy social link. Claim your RM0 live preview now.</p>
+        <div class="closing-btns">
+          <a class="btn" id="closingWaBtn" href="https://wa.me/601154402412" target="_blank" rel="noopener" data-i18n="close_cta">WhatsApp for Free Preview →</a>
+          <a class="text-link" href="#build" data-i18n="close_desk">Configure on Order Desk ↑</a>
+        </div>
+        <p class="closing-note" data-i18n="close_note">WhatsApp 011-5440 2412 · meerulhazeeq@gmail.com</p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a class="brand" href="#top" aria-label="MukaDepan, back to top">
+          <svg class="brand-wordmark" viewBox="0 0 980 220" width="156" height="35" role="img" aria-label="MukaDepan">
+            <path d="M42 146 C62 146, 86 112, 108 100 C122 92, 130 98, 126 116 L120 142 C118 152, 126 156, 138 146 C156 130, 178 106, 196 100 C210 95, 216 102, 212 118 L206 142 C204 152, 212 156, 226 146 C238 138, 250 130, 262 126" stroke="#FFFFFF" stroke-width="33" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+            <text x="278" y="156" fill="#FFFFFF" class="brand-text">ukadepan</text>
+          </svg>
+        </a>
+        <p data-i18n="foot_tag">Custom-coded, sub-second landing pages for Malaysian SMEs. Live preview first, 72-hour launch, 100% yours to own.</p>
+      </div>
+
+      <nav class="footer-col" aria-label="Footer">
+        <p class="footer-label" data-i18n="foot_nav">Explore</p>
+        <a href="#build" data-i18n="nav_pricing">Pricing</a>
+        <a href="#compare" data-i18n="nav_compare">Compare</a>
+        <a href="#work" data-i18n="nav_work">Work</a>
+        <a href="#faq" data-i18n="nav_faq">FAQ</a>
+      </nav>
+
+      <div class="footer-col">
+        <p class="footer-label" data-i18n="foot_contact">Direct Desk</p>
+        <a href="https://wa.me/601154402412" target="_blank" rel="noopener">WhatsApp: 011-5440 2412</a>
+        <a href="mailto:meerulhazeeq@gmail.com">meerulhazeeq@gmail.com</a>
+        <p data-i18n="foot_hours">Malaysia · Replies within hours</p>
+      </div>
+    </div>
+
+    <div class="footer-legal">
+      <p>© <span id="year">2026</span> MukaDepan Studio. <span data-i18n="foot_legal">Built and deployed on Vercel Edge.</span></p>
+      <a href="#top" data-i18n="foot_top">Back to top</a>
+    </div>
+  </div>
+</footer>
+
+<aside class="mobile-order" id="mobileOrder" aria-label="Order summary">
+  <div class="mobile-total">
+    <span id="mobileLabel">Total</span>
+    <strong id="mobileTotal">RM 1,290</strong>
+  </div>
+  <a class="btn btn-small" id="mobileOrderBtn" href="https://wa.me/601154402412" target="_blank" rel="noopener" data-i18n="mob_cta">Free Preview</a>
+</aside>
+
+<script src="main.js"></script>
+</body>
+</html>
