@@ -125,6 +125,17 @@
       pm_pick_lite: 'Select Lite',
       pm_pick_pro: 'Select Pro',
       pm_pick_scale: 'Select Scale',
+      pm_picked_lite: 'Selected Lite ✓',
+      pm_picked_pro: 'Selected Pro ✓',
+      pm_picked_scale: 'Selected Scale ✓',
+      doc_title: 'MukaDepan — See Your Live Website Before You Pay RM1',
+      leg_pkg: 'Package',
+      leg_boost: 'Founding perk and boosters',
+      leg_pay: 'Payment style',
+      lbl_biz: 'Business name',
+      lbl_wa: 'WhatsApp number',
+      lbl_link: 'Current website or social link',
+      table_scroll_hint: 'Swipe horizontally to compare →',
 
       step2_label: 'Founding perk & boosters',
       step2_note: 'Toggle what fits',
@@ -226,7 +237,7 @@
       q3_t: 'Do I have to pay RM99/mo Care forever?',
       q3_b: 'No. Care Plan is 100% optional and cancel-anytime. Without Care, you still own your domain and full source code — you can host it free on Vercel/Cloudflare Pages or ask for ad-hoc edits anytime.',
       q4_t: 'How do payments work?',
-      q4_b: 'One-off builds use a 50/50 split: RM0 for preview, 50% upon approving the build, and 50% only after your live domain is online. We accept FPX online banking, DuitNow QR, and Visa/Mastercard. Tight on cash flow? Switch to the Zero-Upfront RM199/mo plan on Lite or Pro.',
+      q4_b: 'One-off builds use a 50/50 split: RM0 for preview, 50% upon approving the build, and 50% only after your live domain is online. We accept FPX online banking, DuitNow QR, and Visa/Mastercard. Tight on cash flow? Switch to the Zero-Upfront plan from RM149/mo on Lite or Pro.',
       q5_t: 'Can my website be in Bahasa Melayu, English, or both?',
       q5_b: 'Pro includes conversion copywriting in either Bahasa Melayu or English. Need an instant EN/BM switcher like this page? Tick the Bilingual add-on or pick Scale (where it is already included).',
       q6_t: 'What do I need to prepare to get started?',
@@ -364,6 +375,17 @@
       pm_pick_lite: 'Pilih Lite',
       pm_pick_pro: 'Pilih Pro',
       pm_pick_scale: 'Pilih Scale',
+      pm_picked_lite: 'Lite Dipilih ✓',
+      pm_picked_pro: 'Pro Dipilih ✓',
+      pm_picked_scale: 'Scale Dipilih ✓',
+      doc_title: 'MukaDepan — Tengok Website Siap Dulu Baru Bayar RM1',
+      leg_pkg: 'Pakej',
+      leg_boost: 'Kelebihan pengasas dan tambahan',
+      leg_pay: 'Cara bayaran',
+      lbl_biz: 'Nama bisnes',
+      lbl_wa: 'Nombor WhatsApp',
+      lbl_link: 'Pautan laman web atau media sosial sedia ada',
+      table_scroll_hint: 'Leret ke kanan untuk banding →',
 
       step2_label: 'Kelebihan pengasas & tambahan',
       step2_note: 'Pilih ikut keperluan',
@@ -465,7 +487,7 @@
       q3_t: 'Adakah saya wajib bayar Care RM99/bln selamanya?',
       q3_b: 'Tidak wajib. Pelan Care boleh dibatalkan bila-bila masa. Tanpa Care pun anda tetap memiliki domain dan kod sumber penuh 100%.',
       q4_t: 'Bagaimana cara pembayaran berfungsi?',
-      q4_b: 'Pakej sekali bayar guna pecahan 50/50: RM0 untuk preview, 50% bila anda luluskan rekaan, dan 50% selepas domain live. Terima FPX, DuitNow QR dan Kad. Perlukan aliran tunai fleksibel? Pilih Pelan Tanpa Pendahuluan RM199/bln untuk Lite atau Pro.',
+      q4_b: 'Pakej sekali bayar guna pecahan 50/50: RM0 untuk preview, 50% bila anda luluskan rekaan, dan 50% selepas domain live. Terima FPX, DuitNow QR dan Kad. Perlukan aliran tunai fleksibel? Pilih Pelan Tanpa Pendahuluan bermula RM149/bln untuk Lite atau Pro.',
       q5_t: 'Bolehkah laman web dalam Bahasa Melayu, Inggeris, atau kedua-duanya?',
       q5_b: 'Pro sudah termasuk penulisan ayat jualan dalam BM atau Inggeris. Mahu penukar EN/BM pantas seperti laman ini? Tambah pilihan Dwi-Bahasa atau pilih Scale.',
       q6_t: 'Apa yang perlu saya sediakan untuk mula?',
@@ -556,14 +578,31 @@
   /* ---------- sticky mobile bar ---------- */
   const mobileOrder = $('#mobileOrder');
   const builderSection = $('#build');
+  const summarySection = $('#order');
   if (mobileOrder && builderSection) {
+    let builderInView = false;
+    let summaryInView = false;
+    const syncMobileBar = () => {
+      const visible = builderInView && !summaryInView;
+      mobileOrder.classList.toggle('is-visible', visible);
+      mobileOrder.setAttribute('aria-hidden', String(!visible));
+      mobileOrder.inert = !visible;
+    };
+    syncMobileBar();
+
     if ('IntersectionObserver' in window) {
-      const barObserver = new IntersectionObserver(([entry]) => {
-        mobileOrder.classList.toggle('is-visible', entry.isIntersecting);
+      const barObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.target === builderSection) builderInView = entry.isIntersecting;
+          if (entry.target === summarySection) summaryInView = entry.isIntersecting;
+        });
+        syncMobileBar();
       }, { threshold: 0, rootMargin: '-70px 0px 0px 0px' });
       barObserver.observe(builderSection);
+      if (summarySection) barObserver.observe(summarySection);
     } else {
-      mobileOrder.classList.add('is-visible');
+      builderInView = true;
+      syncMobileBar();
     }
   }
 
@@ -582,10 +621,44 @@
   const payWaasTitle = $('#payWaasTitle');
   const payWaasAmt = $('#payWaasAmt');
   const payWaasMeta = $('#payWaasMeta');
-  const bilingualRow = $('#bilingualRow');
-  const bilingualInput = $('input[name="extra"][value="bilingual"]');
-  const bilingualPrice = $('#bilingualPrice');
-  const bilingualMeta = $('#bilingualMeta');
+
+  const perkRow = $('#perkRow');
+  const perkMeta = $('#perkMeta');
+  const perkPrice = $('#perkPrice');
+  const firstInput = $('input[name="first"]');
+
+  const careRow = $('#careRow');
+  const careMeta = $('#careMeta');
+  const carePrice = $('#carePrice');
+  const careInput = $('input[name="care"]');
+
+  const extraControls = [
+    {
+      key: 'bilingual',
+      row: $('#bilingualRow'),
+      input: $('input[name="extra"][value="bilingual"]'),
+      price: $('#bilingualPrice'),
+      meta: $('#bilingualMeta'),
+      metaKey: 'ext_bilingual_meta'
+    },
+    {
+      key: 'booking',
+      row: $('#bookingRow'),
+      input: $('input[name="extra"][value="booking"]'),
+      price: $('#bookingPrice'),
+      meta: $('#bookingMeta'),
+      metaKey: 'ext_booking_meta'
+    },
+    {
+      key: 'fpx',
+      row: $('#fpxRow'),
+      input: $('input[name="extra"][value="fpx"]'),
+      price: $('#fpxPrice'),
+      meta: $('#fpxMeta'),
+      metaKey: 'ext_fpx_meta'
+    }
+  ];
+
   const orderBtn = $('#orderBtn');
   const emailBtn = $('#emailBtn');
   const closingWaBtn = $('#closingWaBtn');
@@ -610,6 +683,7 @@
     });
 
     const dict = I18N[lang];
+    if (dict.doc_title) document.title = dict.doc_title;
     $$('[data-i18n]').forEach((el) => {
       const key = el.dataset.i18n;
       if (dict[key] !== undefined) el.innerHTML = dict[key];
@@ -675,18 +749,61 @@
     const isScale = tierKey === 'scale';
     const ms = currentLang === 'ms';
 
-    // Scale already includes bilingual BM + EN
-    if (bilingualInput && bilingualRow) {
-      bilingualRow.classList.toggle('is-included', isScale);
+    // Scale already includes bilingual toggle, smart booking estimator, and FPX link
+    extraControls.forEach(({ key, row, input, price, meta, metaKey }) => {
+      if (!row || !input) return;
+      row.classList.toggle('is-included', isScale);
       if (isScale) {
-        bilingualInput.checked = false;
-        bilingualInput.disabled = true;
-        bilingualPrice.textContent = ms ? 'Termasuk' : 'Included';
-        bilingualMeta.textContent = ms ? 'Sudah termasuk dalam MukaDepan Scale' : 'Already included in MukaDepan Scale';
+        input.checked = false;
+        input.disabled = true;
+        if (price) price.textContent = ms ? 'Termasuk' : 'Included';
+        if (meta) meta.textContent = ms ? 'Sudah termasuk dalam MukaDepan Scale' : 'Already included in MukaDepan Scale';
       } else {
-        bilingualInput.disabled = false;
-        bilingualPrice.textContent = '+RM 350';
-        bilingualMeta.textContent = I18N[currentLang].ext_bilingual_meta;
+        input.disabled = false;
+        if (price) price.textContent = '+' + money(EXTRAS[key].price);
+        if (meta) meta.textContent = I18N[currentLang][metaKey];
+      }
+    });
+
+    const payMode = $('input[name="pay"]:checked').value;
+    const isWaas = payMode === 'waas';
+    const isZeroUpfront = isWaas && tier.waasMonthly !== null;
+
+    // Zero-Upfront already has RM 0 setup and includes Care Plan
+    if (perkRow && firstInput) {
+      perkRow.classList.toggle('is-disabled', isZeroUpfront);
+      firstInput.disabled = isZeroUpfront;
+      if (isZeroUpfront) {
+        if (perkPrice) perkPrice.textContent = ms ? 'Sekali bayar' : 'One-off only';
+        if (perkMeta) {
+          perkMeta.textContent = ms
+            ? 'Untuk bayaran sekali bayar sahaja (Tanpa Pendahuluan sudah RM 0 setup)'
+            : 'One-off builds only — Zero-Upfront already has RM 0 setup';
+        }
+      } else {
+        if (perkPrice) perkPrice.textContent = '− RM 200';
+        if (perkMeta) {
+          const reduced = money(tier.price - FIRST_BONUS);
+          perkMeta.textContent = ms
+            ? `Satu setiap perniagaan — ${tier.ms} jadi ${reduced} sahaja`
+            : `One per business — brings ${tier.en} down to ${reduced}`;
+        }
+      }
+    }
+
+    if (careRow && careInput) {
+      careRow.classList.toggle('is-included', isZeroUpfront);
+      careInput.disabled = isZeroUpfront;
+      if (isZeroUpfront) {
+        if (carePrice) carePrice.textContent = ms ? 'Termasuk' : 'Included';
+        if (careMeta) {
+          careMeta.textContent = ms
+            ? 'Sudah termasuk dalam Pelan Tanpa Pendahuluan'
+            : 'Already included in Zero-Upfront Plan';
+        }
+      } else {
+        if (carePrice) carePrice.textContent = I18N[currentLang].care_price;
+        if (careMeta) careMeta.textContent = I18N[currentLang].care_meta;
       }
     }
 
@@ -694,9 +811,8 @@
       .filter((el) => !el.disabled)
       .map((el) => EXTRAS[el.value]);
 
-    const first = $('input[name="first"]').checked;
-    const care = $('input[name="care"]').checked;
-    const payMode = $('input[name="pay"]:checked').value;
+    const first = !!(firstInput && firstInput.checked && !firstInput.disabled);
+    const care = !!(careInput && careInput.checked && !careInput.disabled);
 
     const extrasSum = extras.reduce((acc, item) => acc + item.price, 0);
     const extrasDays = extras.reduce((acc, item) => acc + item.days, 0);
@@ -716,10 +832,10 @@
         : `RM0 preview · ${money(halfAmt)} approval · ${money(oneOffTotal - halfAmt)} live`;
     }
 
-    let isWaas = payMode === 'waas';
     let monthlyPrice = 0;
     let planTotal = oneOffTotal;
     let payLine = '';
+    let milestones = [0, 0, 0];
 
     if (tier.waasMonthly !== null) {
       // Lite or Pro supports Zero-Upfront WaaS
@@ -730,16 +846,22 @@
       if (payWaasAmt) payWaasAmt.textContent = `RM 0 setup · ${money(monthlyPrice)}${ms ? '/bln' : '/mo'}`;
       if (payWaasMeta) {
         payWaasMeta.textContent = ms
-          ? `12 bulan · Hosting, domain & Care termasuk`
-          : `12 months · Hosting, domain & Care included`;
+          ? '12 bulan · Hosting, domain & Care termasuk'
+          : '12 months · Hosting, domain & Care included';
       }
     } else {
-      // Scale uses honest 3-milestone installment instead of undercharging WaaS
-      const part3 = Math.ceil(oneOffTotal / 3);
-      monthlyPrice = part3;
+      // Scale uses exact 3-milestone installment summing strictly to oneOffTotal
+      const base = Math.floor(oneOffTotal / 3);
+      const rem = oneOffTotal - base * 3;
+      milestones = [base + (rem > 0 ? 1 : 0), base + (rem > 1 ? 1 : 0), base];
+      monthlyPrice = milestones[0];
       planTotal = oneOffTotal;
       if (payWaasTitle) payWaasTitle.textContent = ms ? '3× Bayaran Berperingkat' : '3× Milestone Split';
-      if (payWaasAmt) payWaasAmt.textContent = `3 × ${money(part3)}`;
+      if (payWaasAmt) {
+        payWaasAmt.textContent = rem === 0
+          ? `3 × ${money(base)}`
+          : `${money(milestones[0])} · ${money(milestones[1])} · ${money(milestones[2])}`;
+      }
       if (payWaasMeta) {
         payWaasMeta.textContent = ms
           ? 'Mula · Semakan · Pelancaran (0% faedah)'
@@ -751,9 +873,9 @@
     const rows = [[tier[currentLang], money(tier.price)]];
     extras.forEach((e) => rows.push([e[currentLang], '+' + money(e.price)]));
     if (first) rows.push([ms ? 'Bonus Bisnes Pertama' : 'Founding First-Site Bonus', '−' + money(FIRST_BONUS)]);
-    if (care && !(isWaas && tier.waasMonthly !== null)) {
+    if (care) {
       rows.push([ms ? 'Pelan Care (pilihan)' : 'MukaDepan Care (optional)', `+${money(CARE_MONTHLY)}/${ms ? 'bln' : 'mo'}`]);
-    } else if (isWaas && tier.waasMonthly !== null) {
+    } else if (isZeroUpfront) {
       rows.push([ms ? 'Hosting, domain & Care' : 'Hosting, domain & Care', ms ? 'Termasuk' : 'Included']);
     }
 
@@ -770,7 +892,7 @@
     summaryTierName.textContent = tier[currentLang];
     summaryDate.textContent = launchDate;
 
-    if (isWaas && tier.waasMonthly !== null) {
+    if (isZeroUpfront) {
       orderLabel.textContent = ms ? 'Setiap bulan' : 'Each month';
       orderTotal.textContent = money(monthlyPrice);
       orderUnit.textContent = ms ? '/bln' : '/mo';
@@ -784,13 +906,21 @@
         ? `Tanpa Pendahuluan: RM0 setup, ${money(monthlyPrice)}/bln × 12 bulan`
         : `Zero-Upfront: RM0 setup, ${money(monthlyPrice)}/mo × 12 months`;
     } else if (isWaas && tier.waasMonthly === null) {
-      orderLabel.textContent = ms ? 'Setiap fasa (×3)' : 'Per milestone (×3)';
-      orderTotal.textContent = money(monthlyPrice);
+      const equalSplit = milestones[0] === milestones[2];
+      const splitStr = equalSplit
+        ? `3 × ${money(milestones[0])}`
+        : `${money(milestones[0])} + ${money(milestones[1])} + ${money(milestones[2])}`;
+      orderLabel.textContent = ms ? 'Fasa pertama (1/3)' : 'First milestone (1/3)';
+      orderTotal.textContent = money(milestones[0]);
       orderUnit.hidden = true;
       orderPlan.hidden = false;
-      orderPlan.textContent = ms ? `Jumlah projek: ${money(oneOffTotal)} (0% faedah)` : `Project total: ${money(oneOffTotal)} (0% interest)`;
+      orderPlan.textContent = ms
+        ? `Jumlah projek: ${money(oneOffTotal)} (${splitStr}, 0% faedah)`
+        : `Project total: ${money(oneOffTotal)} (${splitStr}, 0% interest)`;
       termsLine.textContent = ms ? 'RM0 preview · 3 bayaran berperingkat' : 'RM0 preview · 3 milestone payments';
-      payLine = ms ? `3× Bayaran Berperingkat: 3 × ${money(monthlyPrice)}` : `3× Milestone Split: 3 × ${money(monthlyPrice)}`;
+      payLine = ms
+        ? `3× Bayaran Berperingkat: ${splitStr} (Jumlah ${money(oneOffTotal)})`
+        : `3× Milestone Split: ${splitStr} (Total ${money(oneOffTotal)})`;
     } else {
       orderLabel.textContent = ms ? 'Jumlah sekali bayar' : 'One-off total';
       orderTotal.textContent = money(oneOffTotal);
@@ -807,21 +937,17 @@
         : `One-Off ${money(oneOffTotal)} (50/50: ${money(halfAmt)} + ${money(oneOffTotal - halfAmt)})`;
     }
 
-    const savings = Math.max(0, tier.agencyAnchor + extrasSum - oneOffTotal);
+    const effectiveTotal = isZeroUpfront ? planTotal : oneOffTotal;
+    const savings = Math.max(0, tier.agencyAnchor + extrasSum - effectiveTotal);
     orderSavings.textContent = ms
       ? `Jimat ${money(savings)} berbanding harga biasa agensi KL`
       : `You save ${money(savings)} vs typical KL agency rates`;
 
-    const links = buildLinks({ tier, extras, first, care, payLine, launchDate, oneOffTotal });
+    const links = buildLinks({ tier, extras, first, care, payLine, launchDate, oneOffTotal, effectiveTotal });
     orderBtn.href = links.waHref;
     emailBtn.href = links.mailHref;
     if (mobileOrderBtn) mobileOrderBtn.href = links.waHref;
-    if (closingWaBtn) {
-      const quickMsg = ms
-        ? 'Hai MukaDepan, saya mahu tuntut Preview Percuma RM0 (24 jam) untuk bisnes saya.'
-        : 'Hi MukaDepan, I want to claim my Free RM0 24h website preview.';
-      closingWaBtn.href = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(quickMsg)}`;
-    }
+    if (closingWaBtn) closingWaBtn.href = links.waHref;
 
     if (mobileLabel) mobileLabel.textContent = orderLabel.textContent;
     if (mobileTotal) mobileTotal.textContent = orderTotal.textContent + (orderUnit.hidden ? '' : orderUnit.textContent);
@@ -829,9 +955,12 @@
     orderBtn.dataset.payload = JSON.stringify(links.payload);
 
     $$('[data-select-tier]').forEach((btn) => {
-      const selected = btn.dataset.selectTier === tierKey;
+      const key = btn.dataset.selectTier;
+      const selected = key === tierKey;
       btn.classList.toggle('is-selected', selected);
       btn.setAttribute('aria-pressed', String(selected));
+      const labelKey = (selected ? 'pm_picked_' : 'pm_pick_') + key;
+      if (I18N[currentLang][labelKey]) btn.textContent = I18N[currentLang][labelKey];
     });
   };
 
@@ -873,7 +1002,10 @@
         target.checked = true;
         render();
         const buildEl = $('#build');
-        if (buildEl) buildEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        if (buildEl) {
+          const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+          buildEl.scrollIntoView({ behavior: reduced ? 'auto' : 'smooth', block: 'start' });
+        }
       }
     });
   });

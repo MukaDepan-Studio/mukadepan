@@ -10,10 +10,10 @@
   <meta property="og:title" content="MukaDepan — See Your Live Website Before You Pay RM1">
   <meta property="og:description" content="Custom-coded, 90+ Mobile Speed landing pages for Malaysian SMEs. Live preview in 24h, launch in 72h, 100% yours to keep.">
   <meta property="og:type" content="website">
-  <meta property="og:image" content="/assets/brand/og-mukadepan.png">
+  <meta property="og:image" content="https://mukadepan.vercel.app/assets/brand/og-mukadepan.png">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="preload" href="assets/fonts/dm-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="assets/fonts/newsreader-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/newsreader-italic-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -99,7 +99,32 @@
         </div>
 
         <figure class="proof-visual">
-          <img src="assets/img/pour.jpg" width="1600" height="1000" alt="Crafted editorial studio workspace" fetchpriority="high">
+          <div class="proof-browser" aria-hidden="true">
+            <div class="proof-chrome">
+              <span class="proof-dots"><i></i><i></i><i></i></span>
+              <span class="proof-url">yourbusiness.my</span>
+              <span class="proof-pill">98 / 100 · 0.7s</span>
+            </div>
+            <div class="proof-wire">
+              <div class="pw-top">
+                <span class="pw-brand"></span>
+                <span class="pw-nav"><i></i><i></i></span>
+              </div>
+              <div class="pw-body">
+                <div class="pw-copy">
+                  <span class="pw-eyebrow"></span>
+                  <span class="pw-h1"></span>
+                  <span class="pw-h1 is-short"></span>
+                  <span class="pw-p"></span>
+                  <span class="pw-cta">WhatsApp Preview →</span>
+                </div>
+                <div class="pw-side">
+                  <span class="pw-card"></span>
+                  <span class="pw-card is-accent"></span>
+                </div>
+              </div>
+            </div>
+          </div>
           <figcaption>
             <span data-i18n="proof_cap_left">Pay RM0 until preview approved</span>
             <span data-i18n="proof_cap_right">FPX · DuitNow · Card</span>
@@ -149,7 +174,7 @@
         <div class="choices" id="builderForm">
 
           <fieldset class="choice-block">
-            <legend class="sr-only">Package</legend>
+            <legend class="sr-only" data-i18n="leg_pkg">Package</legend>
             <div class="block-head" aria-hidden="true">
               <span class="block-title"><span class="block-num">01</span><span data-i18n="step1_label">Choose your package</span></span>
               <span class="block-note" data-i18n="step1_note">Code &amp; mobile QA included</span>
@@ -226,30 +251,30 @@
           </fieldset>
 
           <fieldset class="choice-block">
-            <legend class="sr-only">Founding perk and boosters</legend>
+            <legend class="sr-only" data-i18n="leg_boost">Founding perk and boosters</legend>
             <div class="block-head" aria-hidden="true">
               <span class="block-title"><span class="block-num">02</span><span data-i18n="step2_label">Founding perk &amp; boosters</span></span>
               <span class="block-note" data-i18n="step2_note">Toggle what fits</span>
             </div>
 
-            <label class="deal-row">
+            <label class="deal-row" id="perkRow">
               <input type="checkbox" name="first" value="yes" checked>
               <span class="checkmark" aria-hidden="true"></span>
               <span class="deal-copy">
                 <span class="deal-name" data-i18n="perk_name">Founding First-Site Bonus</span>
-                <span class="deal-meta" data-i18n="perk_meta">One per business — brings Pro down to RM 1,290</span>
+                <span class="deal-meta" id="perkMeta" data-i18n="perk_meta">One per business — brings Pro down to RM 1,290</span>
               </span>
-              <span class="deal-price">− RM 200</span>
+              <span class="deal-price" id="perkPrice">− RM 200</span>
             </label>
 
-            <label class="care-row">
+            <label class="care-row" id="careRow">
               <input type="checkbox" name="care" value="yes">
               <span class="checkmark" aria-hidden="true"></span>
               <span class="extra-copy">
                 <span class="extra-name" data-i18n="care_name">MukaDepan Care Plan</span>
-                <span class="extra-meta" data-i18n="care_meta">Unlimited minor text/photo/promo swaps (48h), domain + SSL renewal, uptime alerts · RM3.30/day · Cancel anytime</span>
+                <span class="extra-meta" id="careMeta" data-i18n="care_meta">Unlimited minor text/photo/promo swaps (48h), domain + SSL renewal, uptime alerts · RM3.30/day · Cancel anytime</span>
               </span>
-              <span class="extra-price" data-i18n="care_price">+RM 99/mo</span>
+              <span class="extra-price" id="carePrice" data-i18n="care_price">+RM 99/mo</span>
             </label>
 
             <div class="extra-list">
@@ -263,30 +288,30 @@
                 <span class="extra-price" id="bilingualPrice">+RM 350</span>
               </label>
 
-              <label class="extra-row">
+              <label class="extra-row" id="bookingRow">
                 <input type="checkbox" name="extra" value="booking">
                 <span class="checkmark" aria-hidden="true"></span>
                 <span class="extra-copy">
                   <span class="extra-name" data-i18n="ext_booking_name">Smart Booking / Quote Estimator</span>
-                  <span class="extra-meta" data-i18n="ext_booking_meta">Interactive slot or price pre-qualifier routed to WhatsApp</span>
+                  <span class="extra-meta" id="bookingMeta" data-i18n="ext_booking_meta">Interactive slot or price pre-qualifier routed to WhatsApp</span>
                 </span>
-                <span class="extra-price">+RM 250</span>
+                <span class="extra-price" id="bookingPrice">+RM 250</span>
               </label>
 
-              <label class="extra-row">
+              <label class="extra-row" id="fpxRow">
                 <input type="checkbox" name="extra" value="fpx">
                 <span class="checkmark" aria-hidden="true"></span>
                 <span class="extra-copy">
                   <span class="extra-name" data-i18n="ext_fpx_name">FPX / ToyyibPay Checkout Link</span>
-                  <span class="extra-meta" data-i18n="ext_fpx_meta">Accept deposits &amp; online banking directly · +1 day</span>
+                  <span class="extra-meta" id="fpxMeta" data-i18n="ext_fpx_meta">Accept deposits &amp; online banking directly · +1 day</span>
                 </span>
-                <span class="extra-price">+RM 300</span>
+                <span class="extra-price" id="fpxPrice">+RM 300</span>
               </label>
             </div>
           </fieldset>
 
           <fieldset class="choice-block">
-            <legend class="sr-only">Payment style</legend>
+            <legend class="sr-only" data-i18n="leg_pay">Payment style</legend>
             <div class="block-head" aria-hidden="true">
               <span class="block-title"><span class="block-num">03</span><span data-i18n="step3_label">Payment style</span></span>
               <span class="block-note" data-i18n="step3_note">RM0 charged today</span>
@@ -336,9 +361,12 @@
           <div class="claim-drawer">
             <p class="claim-head" data-i18n="claim_head">Lock your free 24h preview (optional details)</p>
             <div class="claim-fields">
-              <input type="text" id="leadBiz" autocomplete="organization" placeholder="Business name (e.g. Klinik Pergigian Aman)" data-i18n-placeholder="ph_biz">
-              <input type="tel" id="leadWa" autocomplete="tel" placeholder="Your WhatsApp number (e.g. 012-345 6789)" data-i18n-placeholder="ph_wa">
-              <input type="text" id="leadLink" autocomplete="url" placeholder="Current website, FB, or IG link (if any)" data-i18n-placeholder="ph_link">
+              <label class="sr-only" for="leadBiz" data-i18n="lbl_biz">Business name</label>
+              <input type="text" id="leadBiz" name="business" autocomplete="organization" placeholder="Business name (e.g. Klinik Pergigian Aman)" data-i18n-placeholder="ph_biz">
+              <label class="sr-only" for="leadWa" data-i18n="lbl_wa">WhatsApp number</label>
+              <input type="tel" id="leadWa" name="whatsapp" inputmode="tel" autocomplete="tel" placeholder="Your WhatsApp number (e.g. 012-345 6789)" data-i18n-placeholder="ph_wa">
+              <label class="sr-only" for="leadLink" data-i18n="lbl_link">Current website or social link</label>
+              <input type="url" id="leadLink" name="link" autocomplete="url" spellcheck="false" placeholder="Current website, FB, or IG link (if any)" data-i18n-placeholder="ph_link">
             </div>
           </div>
 
@@ -364,6 +392,7 @@
           <p class="section-note" data-i18n="pm_sub">See the exact differences between Lite, Pro, and Scale — tap any tier below to load it above.</p>
         </div>
 
+        <p class="table-scroll-hint" data-i18n="table_scroll_hint">Swipe horizontally to compare →</p>
         <div class="table-wrap" role="region" aria-label="Tier feature comparison table" tabindex="0">
           <table class="cmp-table plan-table">
             <thead>
@@ -500,6 +529,7 @@
         <p class="section-note" data-i18n="cmp_sub">Real 2025–2026 Malaysian market benchmarks compared honestly.</p>
       </div>
 
+      <p class="table-scroll-hint" data-i18n="table_scroll_hint">Swipe horizontally to compare →</p>
       <div class="table-wrap" role="region" aria-label="Competitor comparison table" tabindex="0">
         <table class="cmp-table">
           <thead>
@@ -586,7 +616,7 @@
       </div>
 
       <div class="work-grid">
-        <article class="work-item work-wide">
+        <article class="work-item work-half">
           <a class="work-link" href="https://jadualku-six.vercel.app" target="_blank" rel="noopener">
             <div class="work-shot"><img src="assets/img/site-jadualku.jpg" width="1200" height="750" alt="JadualKu student timetable generator interface" loading="lazy"></div>
             <div class="work-meta">
@@ -596,31 +626,11 @@
           </a>
         </article>
 
-        <article class="work-item work-narrow">
-          <a class="work-link" href="https://catbreeds-eta.vercel.app" target="_blank" rel="noopener">
-            <div class="work-shot"><img src="assets/img/site-catbreeds.jpg" width="1200" height="750" alt="CatBreeds feline encyclopedia and breed guide interface" loading="lazy"></div>
-            <div class="work-meta">
-              <div><h3>CatBreeds</h3><p data-i18n="w2_desc">Feline encyclopedia · Fast static build</p></div>
-              <span class="work-arrow" aria-hidden="true">↗</span>
-            </div>
-          </a>
-        </article>
-
-        <article class="work-item work-narrow">
+        <article class="work-item work-half">
           <a class="work-link" href="https://rose-ctf.vercel.app" target="_blank" rel="noopener">
             <div class="work-shot"><img src="assets/img/site-rosectf.jpg" width="1200" height="750" alt="Rose CTF cyber challenge platform interface" loading="lazy"></div>
             <div class="work-meta">
               <div><h3>Rose CTF</h3><p data-i18n="w3_desc">Cyber challenge platform · Custom dark UI</p></div>
-              <span class="work-arrow" aria-hidden="true">↗</span>
-            </div>
-          </a>
-        </article>
-
-        <article class="work-item work-wide">
-          <a class="work-link" href="https://kopisaigon.vercel.app" target="_blank" rel="noopener">
-            <div class="work-shot"><img src="assets/img/site-kopisaigon.jpg" width="1200" height="750" alt="PRIME commercial real estate advisory interface" loading="lazy"></div>
-            <div class="work-meta">
-              <div><h3>PRIME</h3><p data-i18n="w4_desc">Commercial property advisory · Lead capture</p></div>
               <span class="work-arrow" aria-hidden="true">↗</span>
             </div>
           </a>
@@ -652,7 +662,7 @@
         </article>
         <article class="qa">
           <h3 data-i18n="q4_t">How do payments work?</h3>
-          <p data-i18n="q4_b">One-off builds use a 50/50 split: RM0 for preview, 50% upon approving the build, and 50% only after your live domain is online. We accept FPX online banking, DuitNow QR, and Visa/Mastercard. Tight on cash flow? Switch to the Zero-Upfront RM199/mo plan on Lite or Pro.</p>
+          <p data-i18n="q4_b">One-off builds use a 50/50 split: RM0 for preview, 50% upon approving the build, and 50% only after your live domain is online. We accept FPX online banking, DuitNow QR, and Visa/Mastercard. Tight on cash flow? Switch to the Zero-Upfront plan from RM149/mo on Lite or Pro.</p>
         </article>
         <article class="qa">
           <h3 data-i18n="q5_t">Can my website be in Bahasa Melayu, English, or both?</h3>
@@ -725,7 +735,7 @@
   </div>
 </footer>
 
-<aside class="mobile-order" id="mobileOrder" aria-label="Order summary">
+<aside class="mobile-order" id="mobileOrder" aria-label="Order summary" aria-hidden="true" inert>
   <div class="mobile-total">
     <span id="mobileLabel">Total</span>
     <strong id="mobileTotal">RM 1,290</strong>
